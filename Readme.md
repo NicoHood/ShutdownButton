@@ -34,6 +34,17 @@ $ sudo nano /etc/rc.local
 sudo killall ShutdownButton
 ```
 
+Hardware Setup
+==============
+
+GPIO 24 - LED
+
+GPIO 25 - Button
+
+GNG - GND
+
+![Schematic](Schematic_Button_Led.png)
+
 How to compile
 ==============
 
