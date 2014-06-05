@@ -20,7 +20,7 @@ $ sudo chmod 0777 /home/pi/Desktop/Programs/ShutdownButton
 
 # test program first
 # abort with crtl + c
-./ShutdownButton
+/home/pi/Desktop/Programs/ShutdownButton
 
 # open autostart file
 $ sudo nano /etc/rc.local
