@@ -45,8 +45,8 @@ GNG - GND
 
 ![Schematic](Schematic_Button_Led.png)
 
-How to compile
-==============
+How to compile (optional)
+=========================
 
 First you need to install wiringPi in order to compile the sources.
 
