@@ -28,6 +28,7 @@ THE SOFTWARE.
 #include <errno.h> // error output
 #include <stdint.h> // uint_t definitions
 #include <stdbool.h> // bool type
+#include <unistd.h> // sleep
 
 // include library
 #include "lib.h"
@@ -40,7 +41,7 @@ THE SOFTWARE.
 void setup(void);
 void loop(void);
 void heartbeat(uint16_t interval);
-void checkButton(void);
+bool checkButton(void);
 void buttonIsPressed(void);
 
 // definitions
@@ -53,7 +54,7 @@ const int pinButton	= 25;
 const int pinLed	= 24;
 
 // led variable
-static uint16_t ledInterval = 1000;
+static uint16_t ledInterval = 900;
 
 // main function just calls setup once and loop infinite
 int main(){ 
@@ -84,7 +85,8 @@ void loop(void){
 	// put your main code here, to run repeatedly:
 
 	// check if button is pressed and execute buttonIsPressed() then
-	checkButton();
+	while(checkButton());
+	sleep(1);
 
 	// blink the led
 	heartbeat(ledInterval);
@@ -128,7 +130,7 @@ Example values
 #define DEBOUNCE_READ 5
 #define DEBOUNCE_SPACE 300
 */
-void checkButton(void){
+bool checkButton(void){
 
 	static uint8_t debounce = 0;
 	if(digitalRead(pinButton) == LOW){
@@ -154,6 +156,8 @@ void checkButton(void){
 				buttonIsPressed();
 			}
 		}
+		return true;
 	}
 	else debounce=0;	
+	return false;
 }
