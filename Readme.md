@@ -9,7 +9,9 @@ and the button press was recognized.
 Installation
 ============
 
-In order to install the program so it runs at startup you need to create an entry to rc.local.
+In order to install the program so it runs at startup you need to [**install wiringPi**](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/)
+and create an entry to rc.local.
+
 
 ```bash
 #copy program
